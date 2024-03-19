@@ -53,8 +53,8 @@ async function check_get_api_next() {
 
 
 async function otherApis() {
-  let data = {classes: [1,2,3,4,5,6,7,8,9,10], students: 353, teachers: ["umair", "kamran","suleman","azeem","khadija"]}
-  let paramsData = new URLSearchParams(data).toString();
+  let schoolData = {classes: [1,2,3,4,5,6,7,8,9,10], students: 353, teachers: ["umair","khadija", "kamran","suleman","azeem"]}
+  let paramsData = new URLSearchParams(schoolData).toString();
 
   try {
     let response = await axios.get(`http://localhost:3000/api/testing-api?${paramsData}`);

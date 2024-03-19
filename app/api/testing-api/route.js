@@ -13,3 +13,7 @@ export async function GET(req) {
     return Response.json("your get request has been received")
 }
 
+// export default function hendler(req, res) {
+//     let {classes, students,teachers} = req.query;
+//     console.log("Teachers data in the schools", teachers);
+// }
