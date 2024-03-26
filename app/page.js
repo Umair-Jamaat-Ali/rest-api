@@ -1,28 +1,29 @@
 'use client'
 import axios from "axios";
+import Link from "next/link";
 
 export default function Home() {
 
 
-  async function check_api() {
+//   async function check_api() {
     
-    await axios.post( 'http://localhost:3000/api/testing-api' , {name:'Umair Jamaat Ali'} )
-    .then((result) => {
-        console.log(result.data)
-    }).catch((err) => {
-        console.log(err)
-    });
- }
+//     await axios.post( 'http://localhost:3000/api/testing-api' , {name:'Umair Jamaat Ali'} )
+//     .then((result) => {
+//         console.log(result.data)
+//     }).catch((err) => {
+//         console.log(err)
+//     });
+//  }
 
 
- async function check_get_api() {
-  await axios.get(`http://localhost:3000/api/testing-api?cars=honda&color=red`)
-  .then((result) => {
-      console.log(result.data)
-  }).catch((err) => {
-      console.log(err)
-  });
-}
+//  async function check_get_api() {
+//   await axios.get(`http://localhost:3000/api/testing-api?cars=honda&color=red`)
+//   .then((result) => {
+//       console.log(result.data)
+//   }).catch((err) => {
+//       console.log(err)
+//   });
+// }
 
 
 // async function check_get_api_next() {
@@ -39,35 +40,35 @@ export default function Home() {
 //   });
 // }
 
-async function check_get_api_next() {
-  let data = { cars: ['honda vr', 'bmw'], type: 'auto' };
-  let queryParams = new URLSearchParams(data).toString();
+// async function check_get_api_next() {
+//   let data = { cars: ['honda vr', 'bmw'], type: 'auto' };
+//   let queryParams = new URLSearchParams(data).toString();
 
-  try {
-    const response = await axios.get(`http://localhost:3000/api/testing-api?${queryParams}`);
-    console.log(response.data);
-  } catch (error) {
-    console.error(error);
-  }
-}
+//   try {
+//     const response = await axios.get(`http://localhost:3000/api/testing-api?${queryParams}`);
+//     console.log(response.data);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
 
 
-async function otherApis() {
-  let schoolData = {classes: [1,2,3,4,5,6,7,8,9,10], students: 353, teachers: ["umair","khadija", "kamran","suleman","azeem"]}
-  let paramsData = new URLSearchParams(schoolData).toString();
+// async function otherApis() {
+//   let schoolData = {classes: [1,2,3,4,5,6,7,8,9,10], students: 353, teachers: ["umair","khadija", "kamran","suleman","azeem"]}
+//   let paramsData = new URLSearchParams(schoolData).toString();
 
-  try {
-    let response = await axios.get(`http://localhost:3000/api/testing-api?${paramsData}`);
-    console.log(response.data)
-  } catch (error) {
-    console.error(error);
-  }
-}
+//   try {
+//     let response = await axios.get(`http://localhost:3000/api/testing-api?${paramsData}`);
+//     console.log(response.data)
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
 
   return (
     <>
-    <div>
-      <h1>Testing API</h1>
+    {/* <div>
+      <h1 className="text-3xl text-center">Testing API</h1>
     </div>
     <div>
       <button onClick={check_api}>Check Post Api</button>
@@ -77,7 +78,11 @@ async function otherApis() {
       <button onClick={check_get_api_next}>Check Get Api through Object</button>
       <br/>
       <button onClick={otherApis}>Check Get Api through Object an other example</button>
-    </div>
+    </div> */}
+
+    <li>
+      <Link href="/form">Students Form</Link>
+    </li>
     </>
   );
 }
